@@ -90,13 +90,17 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *CategoriesApi* | [**categoriesGet**](docs/Api/CategoriesApi.md#categoriesget) | **GET** /categories | Get list of all categories
 *CategoriesApi* | [**categoriesGetByCode**](docs/Api/CategoriesApi.md#categoriesgetbycode) | **GET** /categories/{code} | Get category details
+*EventsApi* | [**eventsCalendarGetByEventId**](docs/Api/EventsApi.md#eventscalendargetbyeventid) | **GET** /open-api/events/{eventId}/calendar/{type} | Get specific event calendar by type_extension
 *EventsApi* | [**eventsGet**](docs/Api/EventsApi.md#eventsget) | **GET** /events | Get Events from the system
 *EventsApi* | [**eventsGetByCategoryCode**](docs/Api/EventsApi.md#eventsgetbycategorycode) | **GET** /category-events/by-code/{code} | Get events data for specied category code
 *EventsApi* | [**eventsGetByEventCode**](docs/Api/EventsApi.md#eventsgetbyeventcode) | **GET** /events/by-code/{code} | Get specific event data from the system by event code
 *EventsApi* | [**eventsGetByEventId**](docs/Api/EventsApi.md#eventsgetbyeventid) | **GET** /events/by-id/{id} | Get specific event data from the system by event id
+*InvoicesApi* | [**invoicesCreate**](docs/Api/InvoicesApi.md#invoicescreate) | **GET** /invoices/{type}/create/{tokenValue} | Create invoice by type
+*InvoicesApi* | [**invoicesDownload**](docs/Api/InvoicesApi.md#invoicesdownload) | **GET** /invoices/{type}/download/{tokenValue} | Download invoice by type for order
 *OrdersApi* | [**orderCreate**](docs/Api/OrdersApi.md#ordercreate) | **GET** /order/create | Create order in system
 *OrdersApi* | [**orderGetByToken**](docs/Api/OrdersApi.md#ordergetbytoken) | **GET** /order/{tokenValue} | Get details about created order
 *OrdersApi* | [**orderGetCalculation**](docs/Api/OrdersApi.md#ordergetcalculation) | **GET** /order/calculate | Calculate order
+*PaymentsApi* | [**payuCreate**](docs/Api/PaymentsApi.md#payucreate) | **GET** /payments/payu/create/{tokenValue} | Create payment for order
 *PromotionsApi* | [**couponValid**](docs/Api/PromotionsApi.md#couponvalid) | **GET** /promotions/coupon/{coupon} | Verify coupon validiation
 
 ## Documentation For Models
@@ -104,8 +108,10 @@ Class | Method | HTTP request | Description
  - [BillingData](docs/Model/BillingData.md)
  - [CalculateResponse](docs/Model/CalculateResponse.md)
  - [Category](docs/Model/Category.md)
+ - [CategoryChild](docs/Model/CategoryChild.md)
  - [Channel](docs/Model/Channel.md)
  - [ChannelPricing](docs/Model/ChannelPricing.md)
+ - [ChannelPricings](docs/Model/ChannelPricings.md)
  - [Currency](docs/Model/Currency.md)
  - [Event](docs/Model/Event.md)
  - [GeneralError](docs/Model/GeneralError.md)
@@ -130,4 +136,3 @@ Class | Method | HTTP request | Description
 ## Author
 
 info@smartevent.pl
-
