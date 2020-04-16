@@ -1,7 +1,7 @@
 # Smart Event Open API
 Smart Event Open API documentation
 
-- API version: 2.0.8
+- API version: 2.0.15
 
 ## Requirements
 
