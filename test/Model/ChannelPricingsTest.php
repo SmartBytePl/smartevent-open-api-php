@@ -1,6 +1,6 @@
 <?php
 /**
- * TranslationEventTest
+ * ChannelPricingsTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Swagger\Client;
 
 /**
- * TranslationEventTest Class Doc Comment
+ * ChannelPricingsTest Class Doc Comment
  *
  * @category    Class
- * @description TranslationEvent
+ * @description Keys reference to code of a channel
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TranslationEventTest extends \PHPUnit_Framework_TestCase
+class ChannelPricingsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,44 +69,9 @@ class TranslationEventTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "TranslationEvent"
+     * Test "ChannelPricings"
      */
-    public function testTranslationEvent()
-    {
-    }
-
-    /**
-     * Test attribute "locale"
-     */
-    public function testPropertyLocale()
-    {
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-    }
-
-    /**
-     * Test attribute "alternative_name"
-     */
-    public function testPropertyAlternativeName()
-    {
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-    }
-
-    /**
-     * Test attribute "short_description"
-     */
-    public function testPropertyShortDescription()
+    public function testChannelPricings()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * TaxCategory
+ * ChannelPricings
  *
  * PHP version 5
  *
@@ -32,14 +32,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * TaxCategory Class Doc Comment
+ * ChannelPricings Class Doc Comment
  *
  * @category Class
+ * @description Keys reference to code of a channel
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TaxCategory implements ModelInterface, ArrayAccess
+class ChannelPricings implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +49,7 @@ class TaxCategory implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TaxCategory';
+    protected static $swaggerModelName = 'ChannelPricings';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +57,7 @@ class TaxCategory implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'string',
-'name' => 'string',
-'description' => 'string'    ];
+            ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +65,7 @@ class TaxCategory implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => null,
-'name' => null,
-'description' => null    ];
+            ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +94,7 @@ class TaxCategory implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-'name' => 'name',
-'description' => 'description'    ];
+            ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +102,7 @@ class TaxCategory implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-'name' => 'setName',
-'description' => 'setDescription'    ];
+            ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +110,7 @@ class TaxCategory implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-'name' => 'getName',
-'description' => 'getDescription'    ];
+            ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +170,6 @@ class TaxCategory implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
     }
 
     /**
@@ -191,7 +179,7 @@ class TaxCategory implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -207,78 +195,6 @@ class TaxCategory implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets code
-     *
-     * @return string
-     */
-    public function getCode()
-    {
-        return $this->container['code'];
-    }
-
-    /**
-     * Sets code
-     *
-     * @param string $code code
-     *
-     * @return $this
-     */
-    public function setCode($code)
-    {
-        $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

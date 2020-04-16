@@ -1,6 +1,6 @@
 <?php
 /**
- * TicketTest
+ * CategoryChildTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Swagger\Client;
 
 /**
- * TicketTest Class Doc Comment
+ * CategoryChildTest Class Doc Comment
  *
  * @category    Class
- * @description Ticket
+ * @description CategoryChild
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TicketTest extends \PHPUnit_Framework_TestCase
+class CategoryChildTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,16 +69,9 @@ class TicketTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Ticket"
+     * Test "CategoryChild"
      */
-    public function testTicket()
-    {
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
+    public function testCategoryChild()
     {
     }
 
@@ -86,62 +79,6 @@ class TicketTest extends \PHPUnit_Framework_TestCase
      * Test attribute "code"
      */
     public function testPropertyCode()
-    {
-    }
-
-    /**
-     * Test attribute "on_hold"
-     */
-    public function testPropertyOnHold()
-    {
-    }
-
-    /**
-     * Test attribute "on_hand"
-     */
-    public function testPropertyOnHand()
-    {
-    }
-
-    /**
-     * Test attribute "alternative_on_hand"
-     */
-    public function testPropertyAlternativeOnHand()
-    {
-    }
-
-    /**
-     * Test attribute "tracked"
-     */
-    public function testPropertyTracked()
-    {
-    }
-
-    /**
-     * Test attribute "visible_after_sold_out"
-     */
-    public function testPropertyVisibleAfterSoldOut()
-    {
-    }
-
-    /**
-     * Test attribute "salable_after_sold_out"
-     */
-    public function testPropertySalableAfterSoldOut()
-    {
-    }
-
-    /**
-     * Test attribute "tax_category"
-     */
-    public function testPropertyTaxCategory()
-    {
-    }
-
-    /**
-     * Test attribute "channel_pricings"
-     */
-    public function testPropertyChannelPricings()
     {
     }
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * CategoriesApi
+ * InvoicesApi
  * PHP version 5
  *
  * @category Class
@@ -39,14 +39,14 @@ use Swagger\Client\HeaderSelector;
 use Swagger\Client\ObjectSerializer;
 
 /**
- * CategoriesApi Class Doc Comment
+ * InvoicesApi Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CategoriesApi
+class InvoicesApi
 {
     /**
      * @var ClientInterface
@@ -87,35 +87,39 @@ class CategoriesApi
     }
 
     /**
-     * Operation categoriesGet
+     * Operation invoicesCreate
      *
-     * Get list of all categories
+     * Create invoice by type
      *
+     * @param  string $token_value order identifcator (required)
+     * @param  string $type type of invoice vat or proforma (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Category[]
+     * @return string
      */
-    public function categoriesGet()
+    public function invoicesCreate($token_value, $type)
     {
-        list($response) = $this->categoriesGetWithHttpInfo();
+        list($response) = $this->invoicesCreateWithHttpInfo($token_value, $type);
         return $response;
     }
 
     /**
-     * Operation categoriesGetWithHttpInfo
+     * Operation invoicesCreateWithHttpInfo
      *
-     * Get list of all categories
+     * Create invoice by type
      *
+     * @param  string $token_value order identifcator (required)
+     * @param  string $type type of invoice vat or proforma (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Category[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoriesGetWithHttpInfo()
+    public function invoicesCreateWithHttpInfo($token_value, $type)
     {
-        $returnType = '\Swagger\Client\Model\Category[]';
-        $request = $this->categoriesGetRequest();
+        $returnType = 'string';
+        $request = $this->invoicesCreateRequest($token_value, $type);
 
         try {
             $options = $this->createHttpClientOption();
@@ -166,7 +170,7 @@ class CategoriesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Category[]',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -177,17 +181,19 @@ class CategoriesApi
     }
 
     /**
-     * Operation categoriesGetAsync
+     * Operation invoicesCreateAsync
      *
-     * Get list of all categories
+     * Create invoice by type
      *
+     * @param  string $token_value order identifcator (required)
+     * @param  string $type type of invoice vat or proforma (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoriesGetAsync()
+    public function invoicesCreateAsync($token_value, $type)
     {
-        return $this->categoriesGetAsyncWithHttpInfo()
+        return $this->invoicesCreateAsyncWithHttpInfo($token_value, $type)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -196,18 +202,20 @@ class CategoriesApi
     }
 
     /**
-     * Operation categoriesGetAsyncWithHttpInfo
+     * Operation invoicesCreateAsyncWithHttpInfo
      *
-     * Get list of all categories
+     * Create invoice by type
      *
+     * @param  string $token_value order identifcator (required)
+     * @param  string $type type of invoice vat or proforma (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoriesGetAsyncWithHttpInfo()
+    public function invoicesCreateAsyncWithHttpInfo($token_value, $type)
     {
-        $returnType = '\Swagger\Client\Model\Category[]';
-        $request = $this->categoriesGetRequest();
+        $returnType = 'string';
+        $request = $this->invoicesCreateRequest($token_value, $type);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -247,16 +255,30 @@ class CategoriesApi
     }
 
     /**
-     * Create request for operation 'categoriesGet'
+     * Create request for operation 'invoicesCreate'
      *
+     * @param  string $token_value order identifcator (required)
+     * @param  string $type type of invoice vat or proforma (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function categoriesGetRequest()
+    protected function invoicesCreateRequest($token_value, $type)
     {
+        // verify the required parameter 'token_value' is set
+        if ($token_value === null || (is_array($token_value) && count($token_value) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $token_value when calling invoicesCreate'
+            );
+        }
+        // verify the required parameter 'type' is set
+        if ($type === null || (is_array($type) && count($type) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $type when calling invoicesCreate'
+            );
+        }
 
-        $resourcePath = '/categories';
+        $resourcePath = '/invoices/{type}/create/{tokenValue}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -264,17 +286,33 @@ class CategoriesApi
         $multipart = false;
 
 
+        // path params
+        if ($token_value !== null) {
+            $resourcePath = str_replace(
+                '{' . 'tokenValue' . '}',
+                ObjectSerializer::toPathValue($token_value),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($type !== null) {
+            $resourcePath = str_replace(
+                '{' . 'type' . '}',
+                ObjectSerializer::toPathValue($type),
+                $resourcePath
+            );
+        }
 
         // body params
         $_tempBody = null;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['application/pdf']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['application/pdf'],
                 []
             );
         }
@@ -330,37 +368,39 @@ class CategoriesApi
     }
 
     /**
-     * Operation categoriesGetByCode
+     * Operation invoicesDownload
      *
-     * Get category details
+     * Download invoice by type for order
      *
-     * @param  string $code code (required)
+     * @param  string $token_value order identifcator (required)
+     * @param  string $type type of invoice vat or proforma (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Category[]
+     * @return string
      */
-    public function categoriesGetByCode($code)
+    public function invoicesDownload($token_value, $type)
     {
-        list($response) = $this->categoriesGetByCodeWithHttpInfo($code);
+        list($response) = $this->invoicesDownloadWithHttpInfo($token_value, $type);
         return $response;
     }
 
     /**
-     * Operation categoriesGetByCodeWithHttpInfo
+     * Operation invoicesDownloadWithHttpInfo
      *
-     * Get category details
+     * Download invoice by type for order
      *
-     * @param  string $code (required)
+     * @param  string $token_value order identifcator (required)
+     * @param  string $type type of invoice vat or proforma (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Category[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoriesGetByCodeWithHttpInfo($code)
+    public function invoicesDownloadWithHttpInfo($token_value, $type)
     {
-        $returnType = '\Swagger\Client\Model\Category[]';
-        $request = $this->categoriesGetByCodeRequest($code);
+        $returnType = 'string';
+        $request = $this->invoicesDownloadRequest($token_value, $type);
 
         try {
             $options = $this->createHttpClientOption();
@@ -411,7 +451,7 @@ class CategoriesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Category[]',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -422,18 +462,19 @@ class CategoriesApi
     }
 
     /**
-     * Operation categoriesGetByCodeAsync
+     * Operation invoicesDownloadAsync
      *
-     * Get category details
+     * Download invoice by type for order
      *
-     * @param  string $code (required)
+     * @param  string $token_value order identifcator (required)
+     * @param  string $type type of invoice vat or proforma (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoriesGetByCodeAsync($code)
+    public function invoicesDownloadAsync($token_value, $type)
     {
-        return $this->categoriesGetByCodeAsyncWithHttpInfo($code)
+        return $this->invoicesDownloadAsyncWithHttpInfo($token_value, $type)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -442,19 +483,20 @@ class CategoriesApi
     }
 
     /**
-     * Operation categoriesGetByCodeAsyncWithHttpInfo
+     * Operation invoicesDownloadAsyncWithHttpInfo
      *
-     * Get category details
+     * Download invoice by type for order
      *
-     * @param  string $code (required)
+     * @param  string $token_value order identifcator (required)
+     * @param  string $type type of invoice vat or proforma (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoriesGetByCodeAsyncWithHttpInfo($code)
+    public function invoicesDownloadAsyncWithHttpInfo($token_value, $type)
     {
-        $returnType = '\Swagger\Client\Model\Category[]';
-        $request = $this->categoriesGetByCodeRequest($code);
+        $returnType = 'string';
+        $request = $this->invoicesDownloadRequest($token_value, $type);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -494,23 +536,30 @@ class CategoriesApi
     }
 
     /**
-     * Create request for operation 'categoriesGetByCode'
+     * Create request for operation 'invoicesDownload'
      *
-     * @param  string $code (required)
+     * @param  string $token_value order identifcator (required)
+     * @param  string $type type of invoice vat or proforma (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function categoriesGetByCodeRequest($code)
+    protected function invoicesDownloadRequest($token_value, $type)
     {
-        // verify the required parameter 'code' is set
-        if ($code === null || (is_array($code) && count($code) === 0)) {
+        // verify the required parameter 'token_value' is set
+        if ($token_value === null || (is_array($token_value) && count($token_value) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $code when calling categoriesGetByCode'
+                'Missing the required parameter $token_value when calling invoicesDownload'
+            );
+        }
+        // verify the required parameter 'type' is set
+        if ($type === null || (is_array($type) && count($type) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $type when calling invoicesDownload'
             );
         }
 
-        $resourcePath = '/categories/{code}';
+        $resourcePath = '/invoices/{type}/download/{tokenValue}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -519,10 +568,18 @@ class CategoriesApi
 
 
         // path params
-        if ($code !== null) {
+        if ($token_value !== null) {
             $resourcePath = str_replace(
-                '{' . 'code' . '}',
-                ObjectSerializer::toPathValue($code),
+                '{' . 'tokenValue' . '}',
+                ObjectSerializer::toPathValue($token_value),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($type !== null) {
+            $resourcePath = str_replace(
+                '{' . 'type' . '}',
+                ObjectSerializer::toPathValue($type),
                 $resourcePath
             );
         }
@@ -532,11 +589,11 @@ class CategoriesApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['application/pdf']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['application/pdf'],
                 []
             );
         }

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **end_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **visible_from** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **visible_until** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**translations** | [**map[string,\Swagger\Client\Model\TranslationEvent[]]**](array.md) | Keys reference to locale of a translation | [optional] 
+**translations** | [**map[string,\Swagger\Client\Model\TranslationEvent]**](TranslationEvent.md) | Keys reference to locale of a translation | [optional] 
 **tickets** | [**\Swagger\Client\Model\Ticket[]**](Ticket.md) |  | [optional] 
 **images** | [**\Swagger\Client\Model\Image[]**](Image.md) |  | [optional] 
 **categories** | [**\Swagger\Client\Model\Category[]**](Category.md) |  | [optional] 

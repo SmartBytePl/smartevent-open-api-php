@@ -1,6 +1,6 @@
 <?php
 /**
- * TaxCategory
+ * CategoryChild
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * TaxCategory Class Doc Comment
+ * CategoryChild Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TaxCategory implements ModelInterface, ArrayAccess
+class CategoryChild implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class TaxCategory implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TaxCategory';
+    protected static $swaggerModelName = 'CategoryChild';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,7 @@ class TaxCategory implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'code' => 'string',
-'name' => 'string',
-'description' => 'string'    ];
+'translations' => 'map[string,\Swagger\Client\Model\TranslationCategory]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -67,8 +66,7 @@ class TaxCategory implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'code' => null,
-'name' => null,
-'description' => null    ];
+'translations' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -98,8 +96,7 @@ class TaxCategory implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'code' => 'code',
-'name' => 'name',
-'description' => 'description'    ];
+'translations' => 'translations'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -108,8 +105,7 @@ class TaxCategory implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'code' => 'setCode',
-'name' => 'setName',
-'description' => 'setDescription'    ];
+'translations' => 'setTranslations'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -118,8 +114,7 @@ class TaxCategory implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'code' => 'getCode',
-'name' => 'getName',
-'description' => 'getDescription'    ];
+'translations' => 'getTranslations'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -180,8 +175,7 @@ class TaxCategory implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['translations'] = isset($data['translations']) ? $data['translations'] : null;
     }
 
     /**
@@ -233,49 +227,25 @@ class TaxCategory implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets name
+     * Gets translations
      *
-     * @return string
+     * @return map[string,\Swagger\Client\Model\TranslationCategory]
      */
-    public function getName()
+    public function getTranslations()
     {
-        return $this->container['name'];
+        return $this->container['translations'];
     }
 
     /**
-     * Sets name
+     * Sets translations
      *
-     * @param string $name name
+     * @param map[string,\Swagger\Client\Model\TranslationCategory] $translations Keys reference to locale of a translation
      *
      * @return $this
      */
-    public function setName($name)
+    public function setTranslations($translations)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
+        $this->container['translations'] = $translations;
 
         return $this;
     }

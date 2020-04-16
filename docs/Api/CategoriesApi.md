@@ -53,7 +53,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **categoriesGetByCode**
-> \Swagger\Client\Model\Category categoriesGetByCode($code)
+> \Swagger\Client\Model\Category[] categoriesGetByCode($code)
 
 Get category details
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Category**](../Model/Category.md)
+[**\Swagger\Client\Model\Category[]**](../Model/Category.md)
 
 ### Authorization
 

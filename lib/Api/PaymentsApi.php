@@ -1,6 +1,6 @@
 <?php
 /**
- * PromotionsApi
+ * PaymentsApi
  * PHP version 5
  *
  * @category Class
@@ -39,14 +39,14 @@ use Swagger\Client\HeaderSelector;
 use Swagger\Client\ObjectSerializer;
 
 /**
- * PromotionsApi Class Doc Comment
+ * PaymentsApi Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PromotionsApi
+class PaymentsApi
 {
     /**
      * @var ClientInterface
@@ -87,37 +87,36 @@ class PromotionsApi
     }
 
     /**
-     * Operation couponValid
+     * Operation payuCreate
      *
-     * Verify coupon validiation
+     * Create payment for order
      *
-     * @param  string $coupon coupon (required)
+     * @param  string $token_value order identifcator (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return string
+     * @return void
      */
-    public function couponValid($coupon)
+    public function payuCreate($token_value)
     {
-        list($response) = $this->couponValidWithHttpInfo($coupon);
-        return $response;
+        $this->payuCreateWithHttpInfo($token_value);
     }
 
     /**
-     * Operation couponValidWithHttpInfo
+     * Operation payuCreateWithHttpInfo
      *
-     * Verify coupon validiation
+     * Create payment for order
      *
-     * @param  string $coupon (required)
+     * @param  string $token_value order identifcator (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function couponValidWithHttpInfo($coupon)
+    public function payuCreateWithHttpInfo($token_value)
     {
-        $returnType = 'string';
-        $request = $this->couponValidRequest($coupon);
+        $returnType = '';
+        $request = $this->payuCreateRequest($token_value);
 
         try {
             $options = $this->createHttpClientOption();
@@ -147,50 +146,28 @@ class PromotionsApi
                 );
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'string',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
             }
             throw $e;
         }
     }
 
     /**
-     * Operation couponValidAsync
+     * Operation payuCreateAsync
      *
-     * Verify coupon validiation
+     * Create payment for order
      *
-     * @param  string $coupon (required)
+     * @param  string $token_value order identifcator (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function couponValidAsync($coupon)
+    public function payuCreateAsync($token_value)
     {
-        return $this->couponValidAsyncWithHttpInfo($coupon)
+        return $this->payuCreateAsyncWithHttpInfo($token_value)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -199,39 +176,25 @@ class PromotionsApi
     }
 
     /**
-     * Operation couponValidAsyncWithHttpInfo
+     * Operation payuCreateAsyncWithHttpInfo
      *
-     * Verify coupon validiation
+     * Create payment for order
      *
-     * @param  string $coupon (required)
+     * @param  string $token_value order identifcator (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function couponValidAsyncWithHttpInfo($coupon)
+    public function payuCreateAsyncWithHttpInfo($token_value)
     {
-        $returnType = 'string';
-        $request = $this->couponValidRequest($coupon);
+        $returnType = '';
+        $request = $this->payuCreateRequest($token_value);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -251,23 +214,23 @@ class PromotionsApi
     }
 
     /**
-     * Create request for operation 'couponValid'
+     * Create request for operation 'payuCreate'
      *
-     * @param  string $coupon (required)
+     * @param  string $token_value order identifcator (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function couponValidRequest($coupon)
+    protected function payuCreateRequest($token_value)
     {
-        // verify the required parameter 'coupon' is set
-        if ($coupon === null || (is_array($coupon) && count($coupon) === 0)) {
+        // verify the required parameter 'token_value' is set
+        if ($token_value === null || (is_array($token_value) && count($token_value) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $coupon when calling couponValid'
+                'Missing the required parameter $token_value when calling payuCreate'
             );
         }
 
-        $resourcePath = '/promotions/coupon/{coupon}';
+        $resourcePath = '/payments/payu/create/{tokenValue}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -276,10 +239,10 @@ class PromotionsApi
 
 
         // path params
-        if ($coupon !== null) {
+        if ($token_value !== null) {
             $resourcePath = str_replace(
-                '{' . 'coupon' . '}',
-                ObjectSerializer::toPathValue($coupon),
+                '{' . 'tokenValue' . '}',
+                ObjectSerializer::toPathValue($token_value),
                 $resourcePath
             );
         }
@@ -289,11 +252,11 @@ class PromotionsApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                []
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                [],
                 []
             );
         }

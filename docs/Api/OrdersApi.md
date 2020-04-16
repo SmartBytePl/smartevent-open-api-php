@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**orderGetCalculation**](OrdersApi.md#ordergetcalculation) | **GET** /order/calculate | Calculate order
 
 # **orderCreate**
-> string orderCreate($customer_name, $customer_surname, $customer_phone, $customer_email, $delivery_name, $delivery_surname, $delivery_phone, $id, $qty, $participant_name, $participant_surname, $participant_email, $participant_phone, $participant_comment, $participant_attributes, $customer_company, $customer_street, $customer_city, $customer_postcode, $customer_country_code, $customer_vatid, $customer_newsletter, $customer_facebook, $customer_linkedin, $customer_twitter, $customer_instagram, $customer_googleplus, $delivery_company, $delivery_street, $delivery_city, $delivery_postcode, $delivery_country_code, $delivery_vatid, $additional_info, $_channel_code, $currency_code, $locale_code, $coupon, $ref)
+> string orderCreate($customer_name, $customer_surname, $customer_phone, $customer_email, $delivery_name, $delivery_surname, $delivery_phone, $_channel_code, $id, $qty, $participant_name, $participant_surname, $participant_email, $participant_phone, $participant_comment, $participant_clothes_size, $customer_company, $customer_street, $customer_city, $customer_postcode, $customer_country_code, $customer_vatid, $customer_newsletter, $customer_facebook, $customer_linkedin, $customer_twitter, $customer_instagram, $customer_googleplus, $delivery_company, $delivery_street, $delivery_city, $delivery_postcode, $delivery_country_code, $delivery_vatid, $notes, $currency_code, $locale_code, $coupon, $ref, $_ga)
 
 Create order in system
 
@@ -32,6 +32,7 @@ $customer_email = "customer_email_example"; // string | Customer email
 $delivery_name = "delivery_name_example"; // string | Name
 $delivery_surname = "delivery_surname_example"; // string | Surname
 $delivery_phone = "delivery_phone_example"; // string | Phone number
+$_channel_code = "_channel_code_example"; // string | Code of the channel which should be used. If not passed it is resolved on domain base.
 $id = array(56); // int[] | Array of tickets ids
 $qty = array(56); // int[] | Array of tickets quantitys
 $participant_name = array("participant_name_example"); // string[] | If not passed, copied from customer_name. Number of participant should be equal number of tickets (sum of values in qty field).
@@ -39,7 +40,7 @@ $participant_surname = array("participant_surname_example"); // string[] | If no
 $participant_email = array("participant_email_example"); // string[] | If not passed, copied from customer_email. Number of participant should be equal number of tickets (sum of values in qty field).
 $participant_phone = array("participant_phone_example"); // string[] | If not passed, copied from customer_phone. Number of participant should be equal number of tickets (sum of values in qty field).
 $participant_comment = array("participant_comment_example"); // string[] | Number of participant should be equal number of tickets (sum of values in qty field).
-$participant_attributes = array("participant_attributes_example"); // string[] | Number of participant should be equal number of tickets (sum of values in qty field).
+$participant_clothes_size = array("participant_clothes_size_example"); // string[] | Number of participant should be equal number of tickets (sum of values in qty field).
 $customer_company = "customer_company_example"; // string | Customer company name
 $customer_street = "customer_street_example"; // string | Street address
 $customer_city = "customer_city_example"; // string | City name
@@ -58,15 +59,15 @@ $delivery_city = "delivery_city_example"; // string | City name
 $delivery_postcode = "delivery_postcode_example"; // string | Post code
 $delivery_country_code = "delivery_country_code_example"; // string | Country code
 $delivery_vatid = "delivery_vatid_example"; // string | Vat ID only digits and signs
-$additional_info = "additional_info_example"; // string | customer comments for order
-$_channel_code = "_channel_code_example"; // string | Code of the channel which should be used. If not passed it is resolved on domain base.
+$notes = "notes_example"; // string | customer comments for order
 $currency_code = "currency_code_example"; // string | Currency of the order. If not passed default channel currency will be used.
 $locale_code = "locale_code_example"; // string | Locale of the order. If not passed default channel locale wii be used.
 $coupon = "coupon_example"; // string | Name of the coupon to be applied
 $ref = "ref_example"; // string | Affiliate referer identficator
+$_ga = "_ga_example"; // string | Google Analytics conversion code
 
 try {
-    $result = $apiInstance->orderCreate($customer_name, $customer_surname, $customer_phone, $customer_email, $delivery_name, $delivery_surname, $delivery_phone, $id, $qty, $participant_name, $participant_surname, $participant_email, $participant_phone, $participant_comment, $participant_attributes, $customer_company, $customer_street, $customer_city, $customer_postcode, $customer_country_code, $customer_vatid, $customer_newsletter, $customer_facebook, $customer_linkedin, $customer_twitter, $customer_instagram, $customer_googleplus, $delivery_company, $delivery_street, $delivery_city, $delivery_postcode, $delivery_country_code, $delivery_vatid, $additional_info, $_channel_code, $currency_code, $locale_code, $coupon, $ref);
+    $result = $apiInstance->orderCreate($customer_name, $customer_surname, $customer_phone, $customer_email, $delivery_name, $delivery_surname, $delivery_phone, $_channel_code, $id, $qty, $participant_name, $participant_surname, $participant_email, $participant_phone, $participant_comment, $participant_clothes_size, $customer_company, $customer_street, $customer_city, $customer_postcode, $customer_country_code, $customer_vatid, $customer_newsletter, $customer_facebook, $customer_linkedin, $customer_twitter, $customer_instagram, $customer_googleplus, $delivery_company, $delivery_street, $delivery_city, $delivery_postcode, $delivery_country_code, $delivery_vatid, $notes, $currency_code, $locale_code, $coupon, $ref, $_ga);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->orderCreate: ', $e->getMessage(), PHP_EOL;
@@ -85,6 +86,7 @@ Name | Type | Description  | Notes
  **delivery_name** | **string**| Name |
  **delivery_surname** | **string**| Surname |
  **delivery_phone** | **string**| Phone number |
+ **_channel_code** | **string**| Code of the channel which should be used. If not passed it is resolved on domain base. |
  **id** | [**int[]**](../Model/int.md)| Array of tickets ids |
  **qty** | [**int[]**](../Model/int.md)| Array of tickets quantitys |
  **participant_name** | [**string[]**](../Model/string.md)| If not passed, copied from customer_name. Number of participant should be equal number of tickets (sum of values in qty field). | [optional]
@@ -92,7 +94,7 @@ Name | Type | Description  | Notes
  **participant_email** | [**string[]**](../Model/string.md)| If not passed, copied from customer_email. Number of participant should be equal number of tickets (sum of values in qty field). | [optional]
  **participant_phone** | [**string[]**](../Model/string.md)| If not passed, copied from customer_phone. Number of participant should be equal number of tickets (sum of values in qty field). | [optional]
  **participant_comment** | [**string[]**](../Model/string.md)| Number of participant should be equal number of tickets (sum of values in qty field). | [optional]
- **participant_attributes** | [**string[]**](../Model/string.md)| Number of participant should be equal number of tickets (sum of values in qty field). | [optional]
+ **participant_clothes_size** | [**string[]**](../Model/string.md)| Number of participant should be equal number of tickets (sum of values in qty field). | [optional]
  **customer_company** | **string**| Customer company name | [optional]
  **customer_street** | **string**| Street address | [optional]
  **customer_city** | **string**| City name | [optional]
@@ -111,12 +113,12 @@ Name | Type | Description  | Notes
  **delivery_postcode** | **string**| Post code | [optional]
  **delivery_country_code** | **string**| Country code | [optional]
  **delivery_vatid** | **string**| Vat ID only digits and signs | [optional]
- **additional_info** | **string**| customer comments for order | [optional]
- **_channel_code** | **string**| Code of the channel which should be used. If not passed it is resolved on domain base. | [optional]
+ **notes** | **string**| customer comments for order | [optional]
  **currency_code** | **string**| Currency of the order. If not passed default channel currency will be used. | [optional]
  **locale_code** | **string**| Locale of the order. If not passed default channel locale wii be used. | [optional]
  **coupon** | **string**| Name of the coupon to be applied | [optional]
  **ref** | **string**| Affiliate referer identficator | [optional]
+ **_ga** | **string**| Google Analytics conversion code | [optional]
 
 ### Return type
 

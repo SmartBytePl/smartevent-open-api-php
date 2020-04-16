@@ -1,6 +1,6 @@
 <?php
 /**
- * OrdersApiTest
+ * PaymentsApiTest
  * PHP version 5
  *
  * @category Class
@@ -32,14 +32,14 @@ use Swagger\Client\ApiException;
 use Swagger\Client\ObjectSerializer;
 
 /**
- * OrdersApiTest Class Doc Comment
+ * PaymentsApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class OrdersApiTest extends \PHPUnit_Framework_TestCase
+class PaymentsApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,32 +71,12 @@ class OrdersApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for orderCreate
+     * Test case for payuCreate
      *
-     * Create order in system.
-     *
-     */
-    public function testOrderCreate()
-    {
-    }
-
-    /**
-     * Test case for orderGetByToken
-     *
-     * Get details about created order.
+     * Create payment for order.
      *
      */
-    public function testOrderGetByToken()
-    {
-    }
-
-    /**
-     * Test case for orderGetCalculation
-     *
-     * Calculate order.
-     *
-     */
-    public function testOrderGetCalculation()
+    public function testPayuCreate()
     {
     }
 }
