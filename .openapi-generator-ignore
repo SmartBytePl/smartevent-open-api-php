@@ -1,0 +1,5 @@
+.openapi-generator
+.composer.json
+.gitignore
+.git_push.sh
+openapitools.json

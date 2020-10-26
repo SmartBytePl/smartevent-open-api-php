@@ -1,25 +1,30 @@
-# Swagger\Client\CategoriesApi
+# SmartEventSDK\CategoriesApi
 
 All URIs are relative to *http://test-se2.smartevent.pl/open-api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**categoriesGet**](CategoriesApi.md#categoriesget) | **GET** /categories | Get list of all categories
-[**categoriesGetByCode**](CategoriesApi.md#categoriesgetbycode) | **GET** /categories/{code} | Get category details
+[**categoriesGet**](CategoriesApi.md#categoriesGet) | **GET** /categories | Get list of all categories
+[**categoriesGetByCode**](CategoriesApi.md#categoriesGetByCode) | **GET** /categories/{code} | Get category details
 
-# **categoriesGet**
-> \Swagger\Client\Model\Category[] categoriesGet()
+
+
+## categoriesGet
+
+> \SmartEventSDK\Models\Category[] categoriesGet()
 
 Get list of all categories
 
 This endpoint will return all categories list
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CategoriesApi(
+
+$apiInstance = new SmartEventSDK\Api\CategoriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -35,11 +40,12 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\Category[]**](../Model/Category.md)
+[**\SmartEventSDK\Models\Category[]**](../Model/Category.md)
 
 ### Authorization
 
@@ -47,29 +53,35 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **categoriesGetByCode**
-> \Swagger\Client\Model\Category[] categoriesGetByCode($code)
+
+## categoriesGetByCode
+
+> \SmartEventSDK\Models\Category[] categoriesGetByCode($code)
 
 Get category details
 
 This endpoint will return details about specific category
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CategoriesApi(
+
+$apiInstance = new SmartEventSDK\Api\CategoriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$code = "code_example"; // string | 
+$code = example-code; // string | 
 
 try {
     $result = $apiInstance->categoriesGetByCode($code);
@@ -82,13 +94,14 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **code** | **string**|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\Category[]**](../Model/Category.md)
+[**\SmartEventSDK\Models\Category[]**](../Model/Category.md)
 
 ### Authorization
 
@@ -96,8 +109,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

@@ -1,43 +1,51 @@
-# Swagger\Client\PaymentsApi
+# SmartEventSDK\PaymentsApi
 
 All URIs are relative to *http://test-se2.smartevent.pl/open-api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**payuCreate**](PaymentsApi.md#payucreate) | **GET** /payments/payu/create/{tokenValue} | Create payment for order
+[**paymentCreate**](PaymentsApi.md#paymentCreate) | **GET** /payments/{paymentType}/create/{tokenValue} | Create payment for order
 
-# **payuCreate**
-> payuCreate($token_value)
+
+
+## paymentCreate
+
+> paymentCreate($tokenValue, $paymentType)
 
 Create payment for order
 
 This endpoint will redirect to start payment
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\PaymentsApi(
+
+$apiInstance = new SmartEventSDK\Api\PaymentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$token_value = "token_value_example"; // string | order identifcator
+$tokenValue = dt9mNQUYzm; // string | Registration identifier.
+$paymentType = payu; // \SmartEventSDK\Models\EnumPaymentType | type of calendar
 
 try {
-    $apiInstance->payuCreate($token_value);
+    $apiInstance->paymentCreate($tokenValue, $paymentType);
 } catch (Exception $e) {
-    echo 'Exception when calling PaymentsApi->payuCreate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PaymentsApi->paymentCreate: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token_value** | **string**| order identifcator |
+ **tokenValue** | **string**| Registration identifier. |
+ **paymentType** | [**\SmartEventSDK\Models\EnumPaymentType**](../Model/.md)| type of calendar |
 
 ### Return type
 
@@ -49,8 +57,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
