@@ -1,5 +1,6 @@
 #!/bin/sh
 # Usage example: /bin/sh ./git_push.sh "minor update"
+cd `dirname "$0"`
 
 git_user_id="SmartBytePl"
 git_repo_id="smartevent-open-api-php"
