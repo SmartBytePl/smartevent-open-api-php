@@ -1,2 +1,4 @@
 .idea
 .swagger-codegen
+.openapi-generator/
+openapitools.json
