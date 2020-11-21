@@ -1068,22 +1068,22 @@ class OrdersApi
         if ($id !== null) {
             if('form' === 'form' && is_array($id)) {
                 foreach($id as $key => $value) {
-                    $queryParams[$key] = $value;
+                    $queryParams['id['.$key.']'] = $value;
                 }
             }
             else {
-                $queryParams['id'] = $id;
+                $queryParams['id[]'] = $id;
             }
         }
         // query params
         if ($qty !== null) {
             if('form' === 'form' && is_array($qty)) {
                 foreach($qty as $key => $value) {
-                    $queryParams[$key] = $value;
+                    $queryParams['qty['.$key.']'] = $value;
                 }
             }
             else {
-                $queryParams['qty'] = $qty;
+                $queryParams['qty[]'] = $qty;
             }
         }
 
