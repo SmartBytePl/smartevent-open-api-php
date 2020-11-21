@@ -1072,7 +1072,7 @@ class OrdersApi
                 }
             }
             else {
-                $queryParams['id[]'] = $id;
+                $queryParams['id'] = $id;
             }
         }
         // query params
@@ -1083,7 +1083,7 @@ class OrdersApi
                 }
             }
             else {
-                $queryParams['qty[]'] = $qty;
+                $queryParams['qty'] = $qty;
             }
         }
 

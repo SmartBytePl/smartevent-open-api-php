@@ -38,17 +38,17 @@ $deliveryName = Jane; // string | Name
 $deliverySurname = Doe; // string | Surname
 $deliveryPhone = 867987321; // string | Phone number
 $channelCode = 'channelCode_example'; // string | Code of the channel which should be used. If not passed it is resolved on domain base.
-$id = 123; // int[] | Array of tickets ids
-$qty = 123; // int[] | Array of tickets quantitys
+$id = [123]; // int[] | Array of tickets ids
+$qty = [123]; // int[] | Array of tickets quantitys
 $participantName = John; // string[] | If not passed, copied from customer_name. Number of participant should be equal number of tickets (sum of values in qty field).
 $participantSurname = Smith; // string[] | If not passed, copied from customer_surname. Number of participant should be equal number of tickets (sum of values in qty field).
 $participantEmail = john.smith@example.com; // string[] | If not passed, copied from customer_email. Number of participant should be equal number of tickets (sum of values in qty field).
 $participantPhone = 234234234; // string[] | If not passed, copied from customer_phone. Number of participant should be equal number of tickets (sum of values in qty field).
 $participantComment = User comment; // string[] | Number of participant should be equal number of tickets (sum of values in qty field).
-$participantStreet = Participant address city; // string[] | Number of participant should be equal number of tickets (sum of values in qty field).
+$participantStreet = Participant address street; // string[] | Number of participant should be equal number of tickets (sum of values in qty field).
 $participantCity = Participant address city; // string[] | Number of participant should be equal number of tickets (sum of values in qty field).
 $participantPostcode = Participant address postcode; // string[] | Number of participant should be equal number of tickets (sum of values in qty field).
-$participantCountryCode = Participant address country code like 'PL'; // string[] | Number of participant should be equal number of tickets (sum of values in qty field).
+$participantCountryCode = Participant address country code like PL; // string[] | Number of participant should be equal number of tickets (sum of values in qty field).
 $participantClothesSize = Additional participant attributes like shirt size; // string[] | Number of participant should be equal number of tickets (sum of values in qty field).
 $customerCompany = Company Ltd.; // string | Customer company name
 $customerStreet = 5th Avenue; // string | Street address
@@ -228,8 +228,8 @@ $apiInstance = new SmartEventSDK\Api\OrdersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 123; // int[] | array of tickets ids
-$qty = 123; // int[] | array of tickets quantitys
+$id = [123]; // int[] | array of tickets ids
+$qty = [123]; // int[] | array of tickets quantitys
 
 try {
     $result = $apiInstance->orderGetCalculation($id, $qty);
