@@ -606,7 +606,7 @@ class OrdersApi
         if ($participantName !== null) {
             if('form' === 'form' && is_array($participantName)) {
                 foreach($participantName as $key => $value) {
-                    $queryParams[$key] = $value;
+                    $queryParams['participant_name['.$key.']'] = $value;
                 }
             }
             else {
@@ -617,7 +617,7 @@ class OrdersApi
         if ($participantSurname !== null) {
             if('form' === 'form' && is_array($participantSurname)) {
                 foreach($participantSurname as $key => $value) {
-                    $queryParams[$key] = $value;
+                    $queryParams['participant_surname['.$key.']'] = $value;
                 }
             }
             else {
@@ -628,7 +628,7 @@ class OrdersApi
         if ($participantEmail !== null) {
             if('form' === 'form' && is_array($participantEmail)) {
                 foreach($participantEmail as $key => $value) {
-                    $queryParams[$key] = $value;
+                    $queryParams['participant_email['.$key.']'] = $value;
                 }
             }
             else {
@@ -639,7 +639,7 @@ class OrdersApi
         if ($participantPhone !== null) {
             if('form' === 'form' && is_array($participantPhone)) {
                 foreach($participantPhone as $key => $value) {
-                    $queryParams[$key] = $value;
+                    $queryParams['participant_phone['.$key.']'] = $value;
                 }
             }
             else {
@@ -650,7 +650,7 @@ class OrdersApi
         if ($participantComment !== null) {
             if('form' === 'form' && is_array($participantComment)) {
                 foreach($participantComment as $key => $value) {
-                    $queryParams[$key] = $value;
+                    $queryParams['participant_comment['.$key.']'] = $value;
                 }
             }
             else {
@@ -661,7 +661,7 @@ class OrdersApi
         if ($participantStreet !== null) {
             if('form' === 'form' && is_array($participantStreet)) {
                 foreach($participantStreet as $key => $value) {
-                    $queryParams[$key] = $value;
+                    $queryParams['participant_street['.$key.']'] = $value;
                 }
             }
             else {
@@ -672,7 +672,7 @@ class OrdersApi
         if ($participantCity !== null) {
             if('form' === 'form' && is_array($participantCity)) {
                 foreach($participantCity as $key => $value) {
-                    $queryParams[$key] = $value;
+                    $queryParams['participant_city['.$key.']'] = $value;
                 }
             }
             else {
@@ -683,7 +683,7 @@ class OrdersApi
         if ($participantPostcode !== null) {
             if('form' === 'form' && is_array($participantPostcode)) {
                 foreach($participantPostcode as $key => $value) {
-                    $queryParams[$key] = $value;
+                    $queryParams['participant_postcode['.$key.']'] = $value;
                 }
             }
             else {
@@ -694,7 +694,7 @@ class OrdersApi
         if ($participantCountryCode !== null) {
             if('form' === 'form' && is_array($participantCountryCode)) {
                 foreach($participantCountryCode as $key => $value) {
-                    $queryParams[$key] = $value;
+                    $queryParams['participant_country_code['.$key.']'] = $value;
                 }
             }
             else {
@@ -705,7 +705,7 @@ class OrdersApi
         if ($participantClothesSize !== null) {
             if('form' === 'form' && is_array($participantClothesSize)) {
                 foreach($participantClothesSize as $key => $value) {
-                    $queryParams[$key] = $value;
+                    $queryParams['participant_clothes_size['.$key.']'] = $value;
                 }
             }
             else {
