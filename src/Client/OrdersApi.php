@@ -469,34 +469,34 @@ class OrdersApi
         $isMultipart = false;
 
         if ($participantName !== null) {
-            $queryParams += $this->buildQueryParam($participantName, 'form', 'participant_name[]');
+            $queryParams += $this->buildQueryParam($participantName, 'form', 'participant_name');
         }
         if ($participantSurname !== null) {
-            $queryParams += $this->buildQueryParam($participantSurname, 'form', 'participant_surname[]');
+            $queryParams += $this->buildQueryParam($participantSurname, 'form', 'participant_surname');
         }
         if ($participantEmail !== null) {
-            $queryParams += $this->buildQueryParam($participantEmail, 'form', 'participant_email[]');
+            $queryParams += $this->buildQueryParam($participantEmail, 'form', 'participant_email');
         }
         if ($participantPhone !== null) {
-            $queryParams += $this->buildQueryParam($participantPhone, 'form', 'participant_phone[]');
+            $queryParams += $this->buildQueryParam($participantPhone, 'form', 'participant_phone');
         }
         if ($participantComment !== null) {
-            $queryParams += $this->buildQueryParam($participantComment, 'form', 'participant_comment[]');
+            $queryParams += $this->buildQueryParam($participantComment, 'form', 'participant_comment');
         }
         if ($participantStreet !== null) {
-            $queryParams += $this->buildQueryParam($participantStreet, 'form', 'participant_street[]');
+            $queryParams += $this->buildQueryParam($participantStreet, 'form', 'participant_street');
         }
         if ($participantCity !== null) {
-            $queryParams += $this->buildQueryParam($participantCity, 'form', 'participant_city[]');
+            $queryParams += $this->buildQueryParam($participantCity, 'form', 'participant_city');
         }
         if ($participantPostcode !== null) {
-            $queryParams += $this->buildQueryParam($participantPostcode, 'form', 'participant_postcode[]');
+            $queryParams += $this->buildQueryParam($participantPostcode, 'form', 'participant_postcode');
         }
         if ($participantCountryCode !== null) {
-            $queryParams += $this->buildQueryParam($participantCountryCode, 'form', 'participant_country_code[]');
+            $queryParams += $this->buildQueryParam($participantCountryCode, 'form', 'participant_country_code');
         }
         if ($participantClothesSize !== null) {
-            $queryParams += $this->buildQueryParam($participantClothesSize, 'form', 'participant_clothes_size[]');
+            $queryParams += $this->buildQueryParam($participantClothesSize, 'form', 'participant_clothes_size');
         }
         if ($customerCompany !== null) {
             $queryParams += $this->buildQueryParam($customerCompany, 'form', 'customer_company');
@@ -926,10 +926,10 @@ class OrdersApi
         $isMultipart = false;
 
         if ($id !== null) {
-            $queryParams += $this->buildQueryParam($id, 'form', 'id[]');
+            $queryParams += $this->buildQueryParam($id, 'form', 'id');
         }
         if ($qty !== null) {
-            $queryParams += $this->buildQueryParam($qty, 'form', 'qty[]');
+            $queryParams += $this->buildQueryParam($qty, 'form', 'qty');
         }
         if ($isMultipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
