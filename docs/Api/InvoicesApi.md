@@ -1,18 +1,17 @@
 # SmartEventSDK\InvoicesApi
 
-All URIs are relative to http://test-se2.smartevent.pl/open-api.
+All URIs are relative to *http://test-se2.smartevent.pl/open-api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**invoicesCreate()**](InvoicesApi.md#invoicesCreate) | **GET** /invoices/{invoiceType}/create/{tokenValue} | Create invoice by type
-[**invoicesDownload()**](InvoicesApi.md#invoicesDownload) | **GET** /invoices/{invoiceType}/download/{tokenValue} | Download invoice by type for order
+[**invoicesCreate**](InvoicesApi.md#invoicesCreate) | **GET** /invoices/{invoiceType}/create/{tokenValue} | Create invoice by type
+[**invoicesDownload**](InvoicesApi.md#invoicesDownload) | **GET** /invoices/{invoiceType}/download/{tokenValue} | Download invoice by type for order
 
 
-## `invoicesCreate()`
 
-```php
-invoicesCreate($tokenValue, $invoiceType): string
-```
+## invoicesCreate
+
+> string invoicesCreate($tokenValue, $invoiceType)
 
 Create invoice by type
 
@@ -25,8 +24,7 @@ This endpoint will return pdf document
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-$apiInstance = new SmartEventSDK\Client\InvoicesApi(
+$apiInstance = new SmartEventSDK\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -40,9 +38,11 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling InvoicesApi->invoicesCreate: ', $e->getMessage(), PHP_EOL;
 }
+?>
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -60,17 +60,16 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/pdf`
+- **Accept**: application/pdf
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
 [[Back to README]](../../README.md)
 
-## `invoicesDownload()`
 
-```php
-invoicesDownload($tokenValue, $invoiceType): string
-```
+## invoicesDownload
+
+> string invoicesDownload($tokenValue, $invoiceType)
 
 Download invoice by type for order
 
@@ -83,8 +82,7 @@ This endpoint will return pdf document
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-$apiInstance = new SmartEventSDK\Client\InvoicesApi(
+$apiInstance = new SmartEventSDK\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -98,9 +96,11 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling InvoicesApi->invoicesDownload: ', $e->getMessage(), PHP_EOL;
 }
+?>
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -118,8 +118,9 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/pdf`
+- **Accept**: application/pdf
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
 [[Back to README]](../../README.md)
+

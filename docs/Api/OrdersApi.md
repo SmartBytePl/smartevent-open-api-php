@@ -1,19 +1,18 @@
 # SmartEventSDK\OrdersApi
 
-All URIs are relative to http://test-se2.smartevent.pl/open-api.
+All URIs are relative to *http://test-se2.smartevent.pl/open-api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**orderCreate()**](OrdersApi.md#orderCreate) | **GET** /order/create | Create order in system
-[**orderGetByToken()**](OrdersApi.md#orderGetByToken) | **GET** /order/{tokenValue} | Get details about created order
-[**orderGetCalculation()**](OrdersApi.md#orderGetCalculation) | **GET** /order/calculate | Calculate order
+[**orderCreate**](OrdersApi.md#orderCreate) | **GET** /order/create | Create order in system
+[**orderGetByToken**](OrdersApi.md#orderGetByToken) | **GET** /order/{tokenValue} | Get details about created order
+[**orderGetCalculation**](OrdersApi.md#orderGetCalculation) | **GET** /order/calculate | Calculate order
 
 
-## `orderCreate()`
 
-```php
-orderCreate($customerName, $customerSurname, $customerPhone, $customerEmail, $deliveryName, $deliverySurname, $deliveryPhone, $channelCode, $id, $qty, $participantName, $participantSurname, $participantEmail, $participantPhone, $participantComment, $participantStreet, $participantCity, $participantPostcode, $participantCountryCode, $participantClothesSize, $customerCompany, $customerStreet, $customerCity, $customerPostcode, $customerCountryCode, $customerVatid, $customerNewsletter, $customerFacebook, $customerLinkedin, $customerTwitter, $customerInstagram, $customerGoogleplus, $deliveryCompany, $deliveryStreet, $deliveryCity, $deliveryPostcode, $deliveryCountryCode, $deliveryVatid, $notes, $currencyCode, $localeCode, $coupon, $ref, $ga): string
-```
+## orderCreate
+
+> string orderCreate($customerName, $customerSurname, $customerPhone, $customerEmail, $deliveryName, $deliverySurname, $deliveryPhone, $channelCode, $id, $qty, $participantName, $participantSurname, $participantEmail, $participantPhone, $participantComment, $participantStreet, $participantCity, $participantPostcode, $participantCountryCode, $participantClothesSize, $customerCompany, $customerStreet, $customerCity, $customerPostcode, $customerCountryCode, $customerVatid, $customerNewsletter, $customerFacebook, $customerLinkedin, $customerTwitter, $customerInstagram, $customerGoogleplus, $deliveryCompany, $deliveryStreet, $deliveryCity, $deliveryPostcode, $deliveryCountryCode, $deliveryVatid, $notes, $currencyCode, $localeCode, $coupon, $ref, $ga)
 
 Create order in system
 
@@ -26,8 +25,7 @@ This endpoint will allow you to create new order in system. Will return tokenVal
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-$apiInstance = new SmartEventSDK\Client\OrdersApi(
+$apiInstance = new SmartEventSDK\Api\OrdersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -83,9 +81,11 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->orderCreate: ', $e->getMessage(), PHP_EOL;
 }
+?>
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -145,17 +145,16 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
 [[Back to README]](../../README.md)
 
-## `orderGetByToken()`
 
-```php
-orderGetByToken($tokenValue): \SmartEventSDK\Models\Order
-```
+## orderGetByToken
+
+> \SmartEventSDK\Models\Order orderGetByToken($tokenValue)
 
 Get details about created order
 
@@ -168,8 +167,7 @@ This endpoint will response with all order details
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-$apiInstance = new SmartEventSDK\Client\OrdersApi(
+$apiInstance = new SmartEventSDK\Api\OrdersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -182,9 +180,11 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->orderGetByToken: ', $e->getMessage(), PHP_EOL;
 }
+?>
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -201,17 +201,16 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
 [[Back to README]](../../README.md)
 
-## `orderGetCalculation()`
 
-```php
-orderGetCalculation($id, $qty): \SmartEventSDK\Models\CalculateResponse
-```
+## orderGetCalculation
+
+> \SmartEventSDK\Models\CalculateResponse orderGetCalculation($id, $qty)
 
 Calculate order
 
@@ -224,8 +223,7 @@ This endpoint will allow you to get order totals.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-$apiInstance = new SmartEventSDK\Client\OrdersApi(
+$apiInstance = new SmartEventSDK\Api\OrdersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -239,9 +237,11 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->orderGetCalculation: ', $e->getMessage(), PHP_EOL;
 }
+?>
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -259,8 +259,9 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
 [[Back to README]](../../README.md)
+

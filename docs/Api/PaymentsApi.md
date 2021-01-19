@@ -1,17 +1,16 @@
 # SmartEventSDK\PaymentsApi
 
-All URIs are relative to http://test-se2.smartevent.pl/open-api.
+All URIs are relative to *http://test-se2.smartevent.pl/open-api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**paymentCreate()**](PaymentsApi.md#paymentCreate) | **GET** /payments/{paymentType}/create/{tokenValue} | Create payment for order
+[**paymentCreate**](PaymentsApi.md#paymentCreate) | **GET** /payments/{paymentType}/create/{tokenValue} | Create payment for order
 
 
-## `paymentCreate()`
 
-```php
-paymentCreate($tokenValue, $paymentType)
-```
+## paymentCreate
+
+> paymentCreate($tokenValue, $paymentType)
 
 Create payment for order
 
@@ -24,8 +23,7 @@ This endpoint will redirect to start payment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-$apiInstance = new SmartEventSDK\Client\PaymentsApi(
+$apiInstance = new SmartEventSDK\Api\PaymentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -38,9 +36,11 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling PaymentsApi->paymentCreate: ', $e->getMessage(), PHP_EOL;
 }
+?>
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -60,6 +60,7 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
 [[Back to README]](../../README.md)
+

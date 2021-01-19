@@ -1,21 +1,21 @@
 # SmartEventSDK\EventsApi
 
-All URIs are relative to http://test-se2.smartevent.pl/open-api.
+All URIs are relative to *http://test-se2.smartevent.pl/open-api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**eventsCalendarGetByEventId()**](EventsApi.md#eventsCalendarGetByEventId) | **GET** /events/{id}/calendar/{calendarType} | Get specific event calendar by type_extension
-[**eventsGet()**](EventsApi.md#eventsGet) | **GET** /events | Get Events from the system
-[**eventsGetByCategoryCode()**](EventsApi.md#eventsGetByCategoryCode) | **GET** /category-events/by-code/{code} | Get events data for specied category code
-[**eventsGetByEventCode()**](EventsApi.md#eventsGetByEventCode) | **GET** /events/by-code/{code} | Get specific event data from the system by event code
-[**eventsGetByEventId()**](EventsApi.md#eventsGetByEventId) | **GET** /events/by-id/{id} | Get specific event data from the system by event id
+[**eventsCalendarGetByEventId**](EventsApi.md#eventsCalendarGetByEventId) | **GET** /events/{id}/calendar/{calendarType} | Get specific event calendar by type_extension
+[**eventsGet**](EventsApi.md#eventsGet) | **GET** /events | Get Events from the system
+[**eventsGetByCategoryCode**](EventsApi.md#eventsGetByCategoryCode) | **GET** /category-events/by-code/{code} | Get events data for specied category code
+[**eventsGetByEventCode**](EventsApi.md#eventsGetByEventCode) | **GET** /events/by-code/{code} | Get specific event data from the system by event code
+[**eventsGetByEventId**](EventsApi.md#eventsGetByEventId) | **GET** /events/by-id/{id} | Get specific event data from the system by event id
+[**eventsGetByTicketId**](EventsApi.md#eventsGetByTicketId) | **GET** /events/by-ticket/{id} | Get specific event data from the system by ticket id
 
 
-## `eventsCalendarGetByEventId()`
 
-```php
-eventsCalendarGetByEventId($id, $calendarType)
-```
+## eventsCalendarGetByEventId
+
+> eventsCalendarGetByEventId($id, $calendarType)
 
 Get specific event calendar by type_extension
 
@@ -28,8 +28,7 @@ This endpoint will allow you to get calendar schedule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-$apiInstance = new SmartEventSDK\Client\EventsApi(
+$apiInstance = new SmartEventSDK\Api\EventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -42,9 +41,11 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EventsApi->eventsCalendarGetByEventId: ', $e->getMessage(), PHP_EOL;
 }
+?>
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -64,15 +65,14 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
 [[Back to README]](../../README.md)
 
-## `eventsGet()`
 
-```php
-eventsGet(): \SmartEventSDK\Models\Event[]
-```
+## eventsGet
+
+> \SmartEventSDK\Models\Event[] eventsGet()
 
 Get Events from the system
 
@@ -85,8 +85,7 @@ This endpoint will allow you to get details about events.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-$apiInstance = new SmartEventSDK\Client\EventsApi(
+$apiInstance = new SmartEventSDK\Api\EventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -98,6 +97,7 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EventsApi->eventsGet: ', $e->getMessage(), PHP_EOL;
 }
+?>
 ```
 
 ### Parameters
@@ -115,17 +115,16 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
 [[Back to README]](../../README.md)
 
-## `eventsGetByCategoryCode()`
 
-```php
-eventsGetByCategoryCode($code): \SmartEventSDK\Models\Event[]
-```
+## eventsGetByCategoryCode
+
+> \SmartEventSDK\Models\Event[] eventsGetByCategoryCode($code)
 
 Get events data for specied category code
 
@@ -138,13 +137,12 @@ This endpoint will return events for specified category.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-$apiInstance = new SmartEventSDK\Client\EventsApi(
+$apiInstance = new SmartEventSDK\Api\EventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$code = example-code; // string
+$code = example-code; // string | 
 
 try {
     $result = $apiInstance->eventsGetByCategoryCode($code);
@@ -152,9 +150,11 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EventsApi->eventsGetByCategoryCode: ', $e->getMessage(), PHP_EOL;
 }
+?>
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -171,17 +171,16 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
 [[Back to README]](../../README.md)
 
-## `eventsGetByEventCode()`
 
-```php
-eventsGetByEventCode($code): \SmartEventSDK\Models\Event[]
-```
+## eventsGetByEventCode
+
+> \SmartEventSDK\Models\Event[] eventsGetByEventCode($code)
 
 Get specific event data from the system by event code
 
@@ -194,13 +193,12 @@ This endpoint will allow you to get details about specific event.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-$apiInstance = new SmartEventSDK\Client\EventsApi(
+$apiInstance = new SmartEventSDK\Api\EventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$code = example-code; // string
+$code = example-code; // string | 
 
 try {
     $result = $apiInstance->eventsGetByEventCode($code);
@@ -208,9 +206,11 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EventsApi->eventsGetByEventCode: ', $e->getMessage(), PHP_EOL;
 }
+?>
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -227,17 +227,16 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
 [[Back to README]](../../README.md)
 
-## `eventsGetByEventId()`
 
-```php
-eventsGetByEventId($id): \SmartEventSDK\Models\Event[]
-```
+## eventsGetByEventId
+
+> \SmartEventSDK\Models\Event[] eventsGetByEventId($id)
 
 Get specific event data from the system by event id
 
@@ -250,8 +249,7 @@ This endpoint will allow you to get details about specific event.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-$apiInstance = new SmartEventSDK\Client\EventsApi(
+$apiInstance = new SmartEventSDK\Api\EventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -264,9 +262,11 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EventsApi->eventsGetByEventId: ', $e->getMessage(), PHP_EOL;
 }
+?>
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -283,8 +283,65 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
 [[Back to README]](../../README.md)
+
+
+## eventsGetByTicketId
+
+> \SmartEventSDK\Models\Event[] eventsGetByTicketId($id)
+
+Get specific event data from the system by ticket id
+
+This endpoint will allow you to get details about specific event by ticket id.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+$apiInstance = new SmartEventSDK\Api\EventsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = 123; // int | Recource identificator
+
+try {
+    $result = $apiInstance->eventsGetByTicketId($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EventsApi->eventsGetByTicketId: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| Recource identificator |
+
+### Return type
+
+[**\SmartEventSDK\Models\Event[]**](../Model/Event.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
