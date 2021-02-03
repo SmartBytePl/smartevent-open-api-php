@@ -1,0 +1,7 @@
+.openapi-generator-ignore
+.openapi-generator/
+composer.json
+.gitignore
+.php_cs
+git_push.sh
+openapitools.json
