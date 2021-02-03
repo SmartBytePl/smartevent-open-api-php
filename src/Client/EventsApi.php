@@ -287,6 +287,8 @@ class EventsApi
 
         $operationHost = $this->config->getHost();
         $query = Query::build($queryParams);
+        $query = http_build_query($queryParams);
+
         return new Request($httpMethod, $operationHost . $resourcePath . ($query ? "?{$query}" : ''), $headers, $httpBody);
     }
 
@@ -440,6 +442,8 @@ class EventsApi
 
         $operationHost = $this->config->getHost();
         $query = Query::build($queryParams);
+        $query = http_build_query($queryParams);
+
         return new Request($httpMethod, $operationHost . $resourcePath . ($query ? "?{$query}" : ''), $headers, $httpBody);
     }
 
@@ -606,6 +610,8 @@ class EventsApi
 
         $operationHost = $this->config->getHost();
         $query = Query::build($queryParams);
+        $query = http_build_query($queryParams);
+
         return new Request($httpMethod, $operationHost . $resourcePath . ($query ? "?{$query}" : ''), $headers, $httpBody);
     }
 
@@ -772,6 +778,8 @@ class EventsApi
 
         $operationHost = $this->config->getHost();
         $query = Query::build($queryParams);
+        $query = http_build_query($queryParams);
+
         return new Request($httpMethod, $operationHost . $resourcePath . ($query ? "?{$query}" : ''), $headers, $httpBody);
     }
 
@@ -938,6 +946,8 @@ class EventsApi
 
         $operationHost = $this->config->getHost();
         $query = Query::build($queryParams);
+        $query = http_build_query($queryParams);
+
         return new Request($httpMethod, $operationHost . $resourcePath . ($query ? "?{$query}" : ''), $headers, $httpBody);
     }
 
@@ -1104,6 +1114,8 @@ class EventsApi
 
         $operationHost = $this->config->getHost();
         $query = Query::build($queryParams);
+        $query = http_build_query($queryParams);
+
         return new Request($httpMethod, $operationHost . $resourcePath . ($query ? "?{$query}" : ''), $headers, $httpBody);
     }
 
