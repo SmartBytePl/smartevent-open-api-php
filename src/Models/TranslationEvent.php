@@ -64,7 +64,8 @@ class TranslationEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'alternativeName' => 'string',
         'description' => 'string',
-        'shortDescription' => 'string'
+        'shortDescription' => 'string',
+        'url' => 'string'
     ];
 
     /**
@@ -79,7 +80,8 @@ class TranslationEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => null,
         'alternativeName' => null,
         'description' => null,
-        'shortDescription' => null
+        'shortDescription' => null,
+        'url' => null
     ];
 
     /**
@@ -113,7 +115,8 @@ class TranslationEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'name',
         'alternativeName' => 'alternative_name',
         'description' => 'description',
-        'shortDescription' => 'short_description'
+        'shortDescription' => 'short_description',
+        'url' => 'url'
     ];
 
     /**
@@ -126,7 +129,8 @@ class TranslationEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'setName',
         'alternativeName' => 'setAlternativeName',
         'description' => 'setDescription',
-        'shortDescription' => 'setShortDescription'
+        'shortDescription' => 'setShortDescription',
+        'url' => 'setUrl'
     ];
 
     /**
@@ -139,7 +143,8 @@ class TranslationEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'getName',
         'alternativeName' => 'getAlternativeName',
         'description' => 'getDescription',
-        'shortDescription' => 'getShortDescription'
+        'shortDescription' => 'getShortDescription',
+        'url' => 'getUrl'
     ];
 
     /**
@@ -207,6 +212,7 @@ class TranslationEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['alternativeName'] = $data['alternativeName'] ?? null;
         $this->container['description'] = $data['description'] ?? null;
         $this->container['shortDescription'] = $data['shortDescription'] ?? null;
+        $this->container['url'] = $data['url'] ?? null;
     }
 
     /**
@@ -349,6 +355,30 @@ class TranslationEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setShortDescription($shortDescription)
     {
         $this->container['shortDescription'] = $shortDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
+     *
+     * @return string|null
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     *
+     * @param string|null $url url
+     *
+     * @return self
+     */
+    public function setUrl($url)
+    {
+        $this->container['url'] = $url;
 
         return $this;
     }

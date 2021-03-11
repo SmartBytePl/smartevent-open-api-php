@@ -2,7 +2,7 @@
 
 Smart Event Open API documentation
 
-- API version: 2.0.20
+- API version: 2.0.21
 - Package version: 1.0
 
 ## Requirements
